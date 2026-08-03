@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ink: #070b14;
+  --color-navy: #0c1b33;
+  --color-navy-2: #12274a;
+  --color-ivory: #f5f2ea;
+  --color-gold: #c2a14f;
+  --color-gold-light: #dfc581;
+  --color-mist: #9aa6bb;
+  --color-body: #414d66;
+  --font-display: var(--font-marcellus), serif;
+  --font-sans: var(--font-archivo), sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@layer components {
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .btn-gold {
+    background: var(--color-gold);
+    color: var(--color-ink);
+  }
+  .btn-gold:hover {
+    background: var(--color-gold-light);
+  }
+  .btn-line {
+    border: 1px solid color-mix(in srgb, var(--color-gold) 60%, transparent);
+    color: var(--color-gold-light);
+  }
+  .btn-line:hover {
+    border-color: var(--color-gold-light);
+    color: var(--color-ivory);
+  }
+  .btn-navy {
+    background: var(--color-navy);
+    color: var(--color-ivory);
+  }
+  .btn-navy:hover {
+    background: var(--color-navy-2);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.7s ease-out both;
+  }
+  .rise-2 {
+    animation: rise 0.7s 0.15s ease-out both;
+  }
+  .rise-3 {
+    animation: rise 0.7s 0.3s ease-out both;
+  }
 }
