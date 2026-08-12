@@ -42,14 +42,14 @@ export default function Home() {
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-20">
           <div className="rise">
             <Eyebrow line="h-24">
-              Golden State Assets &amp; Services LLC · California
+              Building. Investing. Growing.
             </Eyebrow>
           </div>
           <h1 className="rise-2 mt-6 max-w-4xl font-display text-5xl leading-[1.08] text-ivory sm:text-6xl md:text-7xl">
             Assets built to outlast the cycle.
           </h1>
           <p className="rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-mist">
-            We are a diversified California holding company that acquires,
+            We are a diversified California-based holding company that acquires,
             manages, and grows long-term assets — operating businesses, real
             estate, equipment, and the partnerships that connect them.
           </p>
@@ -85,7 +85,7 @@ export default function Home() {
             A diversified holding company, built for permanence.
           </h2>
           <p className="mt-6 leading-relaxed text-body">
-            Golden State Assets &amp; Services exists to build long-term value
+            Temetsei Holdings exists to build long-term value
             — not to trade it. We acquire businesses, property, and equipment
             with real earning power, then manage them closely so they compound
             for decades, not quarters.

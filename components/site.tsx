@@ -10,12 +10,41 @@ const nav = [
   { href: "/contact", label: "Contact" },
 ];
 
-function Monogram({ className = "" }: { className?: string }) {
+/**
+ * The T+M monogram. ponytail: the real logo, background keyed out of the
+ * supplied screenshot — 136px square, enough for the 40–44px header/footer
+ * marks at 2x. Re-export from vector art if it's ever needed larger.
+ */
+export function Monogram({ className = "h-10 w-10" }: { className?: string }) {
   return (
-    <span
-      className={`grid h-10 w-10 shrink-0 place-items-center border border-gold/60 font-display text-base text-gold-light ${className}`}
-    >
-      GS
+    <Image
+      src="/monogram.png"
+      alt=""
+      width={136}
+      height={136}
+      className={`shrink-0 ${className}`}
+    />
+  );
+}
+
+/**
+ * The stacked wordmark: TEMETSEI over a ruled HOLDINGS LLC.
+ * ponytail: sizes/tracking are measured off the supplied horizontal lockup,
+ * scaled to a 44px monogram — cap height 0.37× the mark, both lines the same
+ * width so the gold rules fill what HOLDINGS LLC doesn't. Change the two
+ * tracking values together or the rules go lopsided.
+ */
+function Wordmark() {
+  return (
+    <span className="block">
+      <span className="block font-display text-xl leading-none tracking-[0.165em] text-ivory">
+        TEMETSEI
+      </span>
+      <span className="mt-1.5 flex items-center gap-1.5 text-[0.525rem] text-gold">
+        <span aria-hidden className="h-px flex-1 bg-gold/70" />
+        <span className="font-semibold tracking-[0.09em]">HOLDINGS LLC</span>
+        <span aria-hidden className="h-px flex-1 bg-gold/70" />
+      </span>
     </span>
   );
 }
@@ -25,13 +54,9 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-gold/20 bg-navy/95 backdrop-blur">
       <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Monogram />
-          <span className="font-display text-sm leading-tight tracking-[0.16em] text-ivory uppercase">
-            Golden State
-            <span className="block text-[0.65rem] tracking-[0.28em] text-mist">
-              Assets &amp; Services
-            </span>
-          </span>
+          <Monogram className="h-11 w-11" />
+          <span aria-hidden className="h-12 w-px bg-ivory/30" />
+          <Wordmark />
         </Link>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-9">
@@ -130,14 +155,13 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <Monogram />
-            <span className="font-display text-sm tracking-[0.16em] text-ivory uppercase">
-              Golden State
-              <span className="block text-[0.65rem] tracking-[0.28em] text-mist">
-                Assets &amp; Services
-              </span>
-            </span>
+            <Monogram className="h-11 w-11" />
+            <span aria-hidden className="h-12 w-px bg-ivory/30" />
+            <Wordmark />
           </div>
+          <p className="mt-4 text-[0.6rem] font-semibold tracking-[0.3em] text-mist uppercase">
+            Building. Investing. Growing.
+          </p>
           <p className="mt-6 max-w-xs text-sm leading-relaxed">
             A California holding company acquiring, managing, and growing
             long-term assets across industries.
@@ -167,10 +191,10 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             <li>
               <a
-                href="mailto:info@goldenstateassets.com"
+                href="mailto:info@temetseiholdings.com"
                 className="transition-colors hover:text-gold-light"
               >
-                info@goldenstateassets.com
+                info@temetseiholdings.com
               </a>
             </li>
             <li>California, United States</li>
@@ -180,10 +204,10 @@ export function Footer() {
       <div className="border-t border-gold/15">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs sm:flex-row sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Golden State Assets &amp; Services
-            LLC. All rights reserved.
+            © {new Date().getFullYear()} Temetsei Holdings LLC. All rights
+            reserved.
           </p>
-          <p>Built and held for the long term.</p>
+          <p>Building. Investing. Growing.</p>
         </div>
       </div>
     </footer>

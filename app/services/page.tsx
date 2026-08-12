@@ -5,7 +5,7 @@ import { Eyebrow, PageHero, CtaBand } from "@/components/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Business acquisitions, real estate, equipment ownership, asset management, and strategic partnerships — the five disciplines of Golden State Assets & Services LLC.",
+    "Business acquisitions, real estate, equipment ownership, asset management, and strategic partnerships — the five disciplines of Temetsei Holdings LLC.",
 };
 
 const services = [

@@ -4,7 +4,7 @@ import { Eyebrow, PageHero } from "@/components/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Golden State Assets & Services LLC about selling a business or property, partnership opportunities, or financing relationships.",
+    "Contact Temetsei Holdings LLC about selling a business or property, partnership opportunities, or financing relationships.",
 };
 
 const inputClass =
@@ -40,10 +40,10 @@ export default function Contact() {
               <dt className={labelClass}>Email</dt>
               <dd className="mt-2">
                 <a
-                  href="mailto:info@goldenstateassets.com"
+                  href="mailto:info@temetseiholdings.com"
                   className="font-display text-xl text-navy underline decoration-gold decoration-2 underline-offset-8 transition-colors hover:text-gold"
                 >
-                  info@goldenstateassets.com
+                  info@temetseiholdings.com
                 </a>
               </dd>
             </div>
@@ -57,7 +57,7 @@ export default function Contact() {
         {/* ponytail: native mailto form — no backend. Swap action for a form
             service (Formspree, Resend, an API route) when real intake matters. */}
         <form
-          action="mailto:info@goldenstateassets.com"
+          action="mailto:info@temetseiholdings.com"
           method="post"
           encType="text/plain"
           className="border border-ink/10 bg-white p-8 sm:p-10"

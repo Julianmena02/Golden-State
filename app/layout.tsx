@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
-import { Marcellus, Archivo } from "next/font/google";
+import { Cinzel, Montserrat } from "next/font/google";
 import { Header, Footer } from "@/components/site";
 import "./globals.css";
 
-const marcellus = Marcellus({
-  weight: "400",
+// ponytail: Cinzel/Montserrat are the Google-hosted stand-ins for the brand's
+// Trajan Pro / Montserrat Semi Bold. Swap to next/font/local if Trajan is licensed.
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-marcellus",
+  variable: "--font-cinzel",
 });
 
-const archivo = Archivo({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-archivo",
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Golden State Assets & Services LLC",
-    template: "%s — Golden State Assets & Services LLC",
+    default: "Temetsei Holdings LLC — Building. Investing. Growing.",
+    template: "%s — Temetsei Holdings LLC",
   },
   description:
-    "A California holding company that acquires, manages, and grows long-term assets across real estate, operating businesses, equipment, and strategic partnerships.",
+    "Temetsei Holdings LLC acquires, manages, and grows long-term assets across real estate, operating businesses, equipment, and strategic partnerships.",
 };
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${marcellus.variable} ${archivo.variable} h-full`}>
+    <html lang="en" className={`${cinzel.variable} ${montserrat.variable} h-full`}>
       <body className="flex min-h-full flex-col">
         <Header />
         <main className="flex-1">{children}</main>

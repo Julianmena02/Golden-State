@@ -5,7 +5,7 @@ import { Eyebrow, PageHero, CtaBand } from "@/components/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Golden State Assets & Services LLC is a diversified California holding company built to acquire, manage, and grow long-term assets with an owner's mindset.",
+    "Temetsei Holdings LLC is a diversified California holding company built to acquire, manage, and grow long-term assets with an owner's mindset.",
 };
 
 const values = [
@@ -46,7 +46,7 @@ export default function About() {
         </div>
         <div className="space-y-5 leading-relaxed text-body">
           <p>
-            Golden State Assets &amp; Services LLC is a California-based
+            Temetsei Holdings LLC is a California-based
             holding company focused on acquiring, managing, and growing
             valuable assets across multiple industries — operating businesses,
             real estate, equipment, and strategic partnerships.

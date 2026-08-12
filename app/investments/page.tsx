@@ -4,7 +4,7 @@ import { Eyebrow, PageHero, CtaBand } from "@/components/site";
 export const metadata: Metadata = {
   title: "Investments",
   description:
-    "The investment approach of Golden State Assets & Services LLC: disciplined underwriting, real asset backing, and patient, permanent capital.",
+    "The investment approach of Temetsei Holdings LLC: disciplined underwriting, real asset backing, and patient, permanent capital.",
 };
 
 const criteria = [
@@ -77,7 +77,7 @@ export default function Investments() {
         </div>
         <div className="space-y-5 leading-relaxed text-body">
           <p>
-            Golden State Assets &amp; Services is not a fund. There is no
+            Temetsei Holdings is not a fund. There is no
             vintage year, no fee clock, and no pressure to deploy or exit on
             someone else&apos;s schedule. That freedom shapes everything: we
             can wait for the right asset, pay a disciplined price, and hold for
