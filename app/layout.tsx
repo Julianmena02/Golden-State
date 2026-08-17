@@ -15,13 +15,34 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+const description =
+  "Temetsei Holdings LLC acquires, manages, and grows long-term assets across real estate, operating businesses, equipment, and strategic partnerships.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://temetsei.com"),
   title: {
     default: "Temetsei Holdings LLC — Building. Investing. Growing.",
     template: "%s — Temetsei Holdings LLC",
   },
-  description:
-    "Temetsei Holdings LLC acquires, manages, and grows long-term assets across real estate, operating businesses, equipment, and strategic partnerships.",
+  description,
+  openGraph: {
+    type: "website",
+    url: "/",
+    // Without this, search results label the site with the bare domain.
+    siteName: "Temetsei Holdings LLC",
+    title: "Temetsei Holdings LLC — Building. Investing. Growing.",
+    description,
+  },
+};
+
+// Google reads the name it prints above a result from WebSite schema first,
+// og:site_name second. Both say the same thing here.
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Temetsei Holdings LLC",
+  alternateName: "Temetsei Holdings",
+  url: "https://temetsei.com/",
 };
 
 export default function RootLayout({
@@ -32,6 +53,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cinzel.variable} ${montserrat.variable} h-full`}>
       <body className="flex min-h-full flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
